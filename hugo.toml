@@ -2,7 +2,21 @@ baseURL = 'https://svredat2025.github.io/agorai-blog/'
 languageCode = 'it-it'
 title = 'AgorAI | Notiziario Intelligente'
 theme = 'ananke'
-relativeURLs = true
 
+# Aggiungi questa sezione per personalizzare il tema
 [params]
-description = "Un notiziario quotidiano curato da un'intelligenza artificiale."
+  # Il testo che appare nell'header del sito
+  # Puoi anche mettere un'immagine qui con 'logo = "/images/logo.png"'
+  site_logo_text = "AgorAI"
+  
+  # Colore principale del tema (es. blu navy, puoi usare codici esadecimali)
+  # Prova a cambiare questo colore
+  ananke_bg_color = "#292a2d" # Un grigio scuro
+  ananke_fg_color = "#ffffff" # Testo bianco
+  
+  # Aggiungi link ai social nel footer (esempio)
+  [[params.ananke_socials]]
+  name = "telegram"
+  url = "https://t.me/NOME_CANALE_TELEGRAM" # Sostituisci con il link al tuo canale!
+
+
