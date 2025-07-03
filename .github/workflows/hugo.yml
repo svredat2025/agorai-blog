@@ -1,81 +1,51 @@
-# Nome del workflow che apparirà su GitHub
-name: Deploy Hugo site to Pages
+name: Deploy Hugo site to GitHub Pages
 
-# Trigger: quando deve partire questa azione
 on:
-  # Parte ogni volta che c'è un push sul branch 'main'
   push:
     branches:
       - main
-  
-  # Permette di avviarlo manualmente dalla UI di GitHub
   workflow_dispatch:
 
-# Permessi necessari per l'azione per scrivere sulle GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Impostazione per evitare che più azioni partano in contemporanea sulla stessa cosa
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
-# Impostazioni di default per tutti i comandi
-defaults:
-  run:
-    shell: bash
-
-# Definizione dei "lavori" (jobs) da eseguire
 jobs:
-  # Primo lavoro: costruire il sito
   build:
-    # Usa una macchina virtuale Ubuntu aggiornata
     runs-on: ubuntu-latest
     steps:
-      # Passo 1: Scarica il codice del tuo repository
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          # FONDAMENTALE: Includi anche i sottomoduli (il nostro tema Ananke)
           submodules: true
+          fetch-depth: 0
 
-      # Passo 2: Installa Hugo
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          # Usa l'ultima versione di Hugo
           hugo-version: 'latest'
-          # FONDAMENTALE: Installa la versione "Extended" per il tema Ananke
           extended: true
 
-      # Passo 3: Costruisci il sito
-      # Il comando 'hugo --minify' crea la cartella 'public' con il sito finale
       - name: Build
         run: hugo --minify
 
-      # Passo 4: Carica il sito costruito come "artefatto"
-      # Questo permette al lavoro successivo ('deploy') di usarlo
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
-  # Secondo lavoro: pubblicare il sito
   deploy:
-    # Imposta l'ambiente per la pubblicazione su GitHub Pages
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    
-    # Usa una macchina virtuale Ubuntu
     runs-on: ubuntu-latest
-    
-    # Questo lavoro dipende dal successo del lavoro 'build'
     needs: build
     steps:
-      # Passo 1: Pubblica l'artefatto caricato prima
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
