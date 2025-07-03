@@ -1,4 +1,7 @@
 baseURL = 'https://svredat2025.github.io/sito_agorai/'
 languageCode = 'it-it'
-title = 'AgorAI | Notiziario intelligente'
+title = 'AgorAI | Notiziario Intelligente'
 theme = 'ananke'
+
+[params]
+description = "Un notiziario quotidiano curato da un'intelligenza artificiale."
