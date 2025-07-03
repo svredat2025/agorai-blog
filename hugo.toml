@@ -1,5 +1,4 @@
-#baseURL = 'https://svredat2025.github.io/sito_agorai/'
-baseURL = '/sito_agorai/'
+baseURL = 'https://svredat2025.github.io/agorai-blog/'
 languageCode = 'it-it'
 title = 'AgorAI | Notiziario Intelligente'
 theme = 'ananke'
