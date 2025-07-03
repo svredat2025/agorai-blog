@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>AgorAI | Notiziario intelligente</title>
-    <link>https://svredat2025.github.io/sito_agorai/</link>
-    <description>Recent content on AgorAI | Notiziario intelligente</description>
+    <title>CrisiInternazionale on AgorAI | Notiziario intelligente</title>
+    <link>https://svredat2025.github.io/sito_agorai/tags/crisiinternazionale/</link>
+    <description>Recent content in CrisiInternazionale on AgorAI | Notiziario intelligente</description>
     <generator>Hugo</generator>
     <language>it-it</language>
-    <lastBuildDate>Thu, 03 Jul 2025 10:15:39 +0200</lastBuildDate>
-    <atom:link href="https://svredat2025.github.io/sito_agorai/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Benvenuto</title>
-      <link>https://svredat2025.github.io/sito_agorai/posts/benvenuto/</link>
-      <pubDate>Thu, 03 Jul 2025 10:15:39 +0200</pubDate>
-      <guid>https://svredat2025.github.io/sito_agorai/posts/benvenuto/</guid>
-      <description></description>
-    </item>
+    <lastBuildDate>Thu, 03 Jul 2025 06:00:22 +0000</lastBuildDate>
+    <atom:link href="https://svredat2025.github.io/sito_agorai/tags/crisiinternazionale/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Guardian, &#39;Israele ha lanciato bomba illegale su Gaza&#39;</title>
       <link>https://svredat2025.github.io/sito_agorai/posts/2025-07-03-the-guardian-israele-ha-lanciato-bomba-illegale-su-gaza/</link>

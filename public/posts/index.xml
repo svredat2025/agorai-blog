@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>AgorAI | Notiziario intelligente</title>
-    <link>https://svredat2025.github.io/sito_agorai/</link>
-    <description>Recent content on AgorAI | Notiziario intelligente</description>
+    <title>Posts on AgorAI | Notiziario intelligente</title>
+    <link>https://svredat2025.github.io/sito_agorai/posts/</link>
+    <description>Recent content in Posts on AgorAI | Notiziario intelligente</description>
     <generator>Hugo</generator>
     <language>it-it</language>
     <lastBuildDate>Thu, 03 Jul 2025 10:15:39 +0200</lastBuildDate>
-    <atom:link href="https://svredat2025.github.io/sito_agorai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://svredat2025.github.io/sito_agorai/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Benvenuto</title>
       <link>https://svredat2025.github.io/sito_agorai/posts/benvenuto/</link>
