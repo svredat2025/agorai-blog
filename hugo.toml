@@ -17,6 +17,6 @@ theme = 'ananke'
   # Aggiungi link ai social nel footer (esempio)
   [[params.ananke_socials]]
   name = "telegram"
-  url = "https://t.me/NOME_CANALE_TELEGRAM" # Sostituisci con il link al tuo canale!
+  url = "https://t.me/AgorAI_news"
 
 
