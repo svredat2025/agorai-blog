@@ -1,47 +1,19 @@
-# hugo.toml (Versione con personalizzazione grafica)
-
 baseURL = 'https://svredat2025.github.io/agorai-blog/'
 languageCode = 'it-it'
 title = 'AgorAI | Notiziario Intelligente'
 theme = 'ananke'
-
-# Numero di post da mostrare in homepage
-paginate = 5 
+paginate = 5
 
 [params]
-  # Testo che appare sotto il titolo principale nella homepage
+  # Stringa su una sola riga
   description = "Un notiziario quotidiano curato da un'intelligenza artificiale, con analisi su geopolitica, tecnologia e altro."
   
-  # Testo del footer
-  # Puoi usare Markdown per i link, es. [GitHub](https://github.com/tuoutente)
+  # Stringa su una sola riga
   custom_footer = "Progetto creato da Simone Vecchi. Powered by AI & Hugo."
 
-  logo = "/images/logo_sito.jpg
+  # Percorso del logo (assicurati che il file esista in static/images/)
+  logo = "/images/agorai-logo.png"
 
-  # --- PERSONALIZZAZIONE DEI COLORI ---
-  # Colore dello sfondo principale del sito
-  background_color_class = "bg-near-white"  # Usiamo una classe di Tachyons CSS
-  
-  # Colore del testo principale
-  text_color = "washed-gray" # Un grigio chiaro
-  
-  # Colore dei link quando ci passi sopra col mouse
+  # Classi di Tachyons CSS per i colori
+  background_color_class = "bg-near-white"
   link_color = "blue"
-
-  # --- LOGO E FAVICON ---
-  # Se hai un logo (es. 128x128px), caricalo nella cartella 'static/images/'
-  # e poi metti il percorso qui:
-  # logo = "/images/tuo-logo.png"
-  
-  # Favicon (l'icona che appare nella tab del browser)
-  # Crea un file 32x32px e mettilo in 'static/'
-  # favicon = "/favicon.ico"
-  
-  # --- IMMAGINE IN EVIDENZA DI DEFAULT ---
-  # Se un post non ha un'immagine, userà questa.
-  # Carica un'immagine generica in 'static/images/'
-  #featured_image = "/images/default-background.jpg"
-
-  # --- COMMENTI ---
-  # Puoi integrare sistemi di commenti come Disqus o Utterances
-  # Per ora lo lasciamo disabilitato
