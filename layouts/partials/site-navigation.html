@@ -1,0 +1,19 @@
+{{/* layouts/partials/site-navigation.html */}}
+<nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    
+    <!-- MODIFICA CHIAVE: INVECE DEL TESTO, MOSTRIAMO L'IMMAGINE DEL LOGO -->
+    <a href="{{ .Site.Home.RelPermalink }}" class="f3 fw2 hover-white no-underline white-90 dib">
+      {{ with .Site.Params.logo }}
+        <img src="{{ . | relURL }}" class="w4 v-mid" alt="{{ site.Title }}">
+      {{ else }}
+        {{ .Site.Title }}
+      {{ end }}
+    </a>
+    <!-- FINE MODIFICA -->
+
+    <div class="flex-l items-center">
+      {{ partial "social-follow.html" . }}
+    </div>
+  </div>
+</nav>
