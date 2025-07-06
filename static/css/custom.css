@@ -1,59 +1,43 @@
-/* static/css/custom.css */
+/* static/css/custom.css (Versione Robusta) */
 
-/* --- FONT E COLORI DI BASE --- */
+/* Colore di sfondo per l'intera pagina */
 body {
-    /* Un grigio molto scuro per il testo, più leggibile del nero puro */
-    color: #36454F; 
+    background-color: #f4f4f4 !important; /* Grigio chiarissimo */
+    color: #333 !important; /* Testo scuro */
 }
 
-/* --- TITOLI E LINK --- */
-
-/* Titolo principale del sito nell'header */
-.bg-black .f3.fw2.hover-white {
-    /* Usiamo il viola del logo */
-    color: #8A2BE2 !important; 
+/* Header e Footer */
+header .bg-black, footer.bg-black {
+    background-color: white !important;
+    border-bottom: 1px solid #ddd;
 }
 
-/* Titoli degli articoli nella lista */
-.f3.mb1.link {
-    color: #36454F; /* Li manteniamo scuri */
+/* Titolo del sito nell'header */
+header a.f3 {
+    color: #333 !important;
 }
 
-/* Quando passi il mouse su un link, usa il ciano del logo */
-a:hover {
-    color: #00BFFF !important;
+/* Titolo grande nella homepage */
+.tc-l h1 {
+    color: #333 !important;
 }
 
-/* --- PULSANTI E DETTAGLI --- */
+/* Link degli articoli */
+a.link {
+    color: #8A2BE2 !important; /* Viola del logo */
+    text-decoration: none;
+}
+
+a.link:hover {
+    color: #00BFFF !important; /* Ciano del logo al passaggio del mouse */
+}
 
 /* Pulsante "Leggi di più" */
-.f6.link.dim.br-pill.ba {
-    border-color: #8A2BE2; /* Bordo viola */
-    color: #8A2BE2;        /* Testo viola */
+a.f6.br-pill {
+    border-color: #8A2BE2 !important;
+    color: #8A2BE2 !important;
 }
-
-.f6.link.dim.br-pill.ba:hover {
-    background-color: #8A2BE2; /* Sfondo viola al passaggio del mouse */
-    color: white;              /* Testo bianco */
-}
-
-/* --- HEADER E FOOTER --- */
-
-/* Sostituisce lo sfondo nero dell'header con un bianco pulito */
-.bg-black {
-    background-color: white !important;
-    border-bottom: 1px solid #eee; /* Aggiunge una sottile linea di separazione */
-}
-
-/* Cambia il colore del titolo grande nell'header */
-.f1.f-subheadline-l.fw1.i.white-60 {
-    color: #36454F !important;
-}
-
-/* Sfondo del footer */
-.bg-black.bottom-0 {
-    background-color: #f4f4f4 !important; /* Un grigio chiaro per il footer */
-}
-.white-70 {
-    color: #555 !important;
+a.f6.br-pill:hover {
+    background-color: #8A2BE2 !important;
+    color: white !important;
 }

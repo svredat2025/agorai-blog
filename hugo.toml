@@ -12,8 +12,13 @@ pagerSize = 5
   custom_footer = "Progetto creato da Simone Vecchi. Powered by AI & Hugo."
 
   # Percorso del logo (assicurati che il file esista in static/images/)
-  logo = "/images/agorai-logo.png"
+  logo = "/images/logo_sito.jpg"
+
+  # Ananke usa questo parametro per il colore dei link e altri accenti
+  ananke_socials = [
+    # Possiamo aggiungere qui i link social in futuro
+  ]
 
   # Classi di Tachyons CSS per i colori
-  background_color_class = "bg-near-white"
-  link_color = "blue"
+  # background_color_class = "bg-near-white"
+  # link_color = "blue"
