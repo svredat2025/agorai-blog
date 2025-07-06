@@ -5,7 +5,7 @@
     <!-- MODIFICA CHIAVE: INVECE DEL TESTO, MOSTRIAMO L'IMMAGINE DEL LOGO -->
     <a href="{{ .Site.Home.RelPermalink }}" class="f3 fw2 hover-white no-underline white-90 dib">
       {{ with .Site.Params.logo }}
-        <img src="{{ . | relURL }}" class="w4 v-mid" alt="{{ site.Title }}">
+        <img src="{{ . | absURL }}" class="w4 v-mid" alt="{{ site.Title }}">
       {{ else }}
         {{ .Site.Title }}
       {{ end }}
