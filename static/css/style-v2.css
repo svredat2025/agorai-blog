@@ -16,18 +16,15 @@ body {
 
 /* --- HEADER --- */
 .site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    position: fixed; top: 0; left: 0; width: 100%;
     background: white;
-    padding: 10px 30px;
+    padding: 15px 30px; /* Aumentiamo un po' il padding per dare più aria */
     border-bottom: 1px solid #e0e0e0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     z-index: 1000;
-    display: flex; /* Attiva Flexbox */
-    align-items: center; /* Allinea verticalmente */
-    justify-content: center; /* Centra orizzontalmente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header-link {
@@ -38,17 +35,17 @@ body {
 
 /* Logo nell'header */
 .logo {
-    height: 60px;
-    width: 60px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%; /* Tondo */
-    margin-right: 15px;
+    margin-right: 20px;
     object-fit: cover;
 }
 
 /* Titolo del sito nell'header */
 .site-title {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 700;
     color: #2c3e50; /* Grigio-blu scuro */
 }
 
