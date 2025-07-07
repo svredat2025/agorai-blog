@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Caricamento del CSS del tema -->
+    {{ $style := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    
+    <!-- **** LA NOSTRA MODIFICA FONDAMENTALE **** -->
+    <!-- Inseriamo a forza il nostro CSS custom dopo quello del tema -->
+    <link rel="stylesheet" href="{{ "/css/custom-v2.css" | relURL }}">
+    <!-- **************************************** -->
+
+  </head>
+  <body class="ma0 avenir bg-near-white">
+    
+    {{ partial "site-header.html" . }}
+    
+    <main class="pb7" role="main">
+      {{ block "main" . }}{{ end }}
+    </main>
+    
+    {{ partial "site-footer.html" . }}
+    
+  </body>
+</html>
