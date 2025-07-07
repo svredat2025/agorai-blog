@@ -1,13 +1,6 @@
 baseURL = 'https://svredat2025.github.io/agorai-blog/'
 languageCode = 'it-it'
 title = 'AgorAI | Notiziario Intelligente'
-#theme = 'ananke'
-
-[pagination]
-  pageSize = 6 # Mostriamo 6 post per pagina
 
 [params]
-  # Il logo che verrà usato nel nuovo header custom
-  logo = "/images/logo_sito.jpg" 
-  # Testo del footer
-  custom_footer = "Progetto creato da Simone Vecchi. Powered by AI & Hugo."
+  logo = "/images/logo_sito.jpg"

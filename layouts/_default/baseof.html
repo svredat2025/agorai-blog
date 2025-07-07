@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="it-it">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>{{ .Title }} | {{ .Site.Title }}</title>
-    <link rel="stylesheet" href="{{ "/css/custom.css" | relURL }}">
-  </head>
-  <body>
-    {{ partial "site-navigation.html" . }}
-    <main>
-      {{ block "main" . }}{{ end }}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}">
+</head>
+<body>
+    {{ partial "header.html" . }}
+    <main class="container">
+        {{ block "main" . }}{{ end }}
     </main>
-  </body>
+    {{ partial "footer.html" . }}
+</body>
 </html>
