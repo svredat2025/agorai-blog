@@ -2,23 +2,12 @@ baseURL = 'https://svredat2025.github.io/agorai-blog/'
 languageCode = 'it-it'
 title = 'AgorAI | Notiziario Intelligente'
 theme = 'ananke'
-pagerSize = 5
+
+[pagination]
+  pageSize = 6 # Mostriamo 6 post per pagina
 
 [params]
-  # Stringa su una sola riga
-  description = "Un notiziario quotidiano curato da un'intelligenza artificiale, con analisi su geopolitica, tecnologia e altro."
-  
-  # Stringa su una sola riga
+  # Il logo che verrà usato nel nuovo header custom
+  logo = "/images/logo_sito.jpg" 
+  # Testo del footer
   custom_footer = "Progetto creato da Simone Vecchi. Powered by AI & Hugo."
-
-  # Percorso del logo (assicurati che il file esista in static/images/)
-  logo = "/images/logo_sito.jpg"
-
-  # Ananke usa questo parametro per il colore dei link e altri accenti
-  ananke_socials = [
-    # Possiamo aggiungere qui i link social in futuro
-  ]
-
-  # Classi di Tachyons CSS per i colori
-  # background_color_class = "bg-near-white"
-  # link_color = "blue"

@@ -1,147 +1,86 @@
-/* static/css/custom.css (Versione con Header Bianco e Stile Minimale) */
+/* static/css/custom-v2.css (Versione Finale) */
 
 /* --- IMPOSTAZIONI GLOBALI --- */
 body {
-    background-color: #f7f7f7 !important; /* Sfondo principale grigio molto chiaro */
-    color: #2c3e50 !important;      /* Testo principale grigio-blu scuro */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f8fa !important; /* Un azzurrino/grigio molto chiaro */
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* --- HEADER PULITO E BIANCO --- */
-body > header > div.bg-black {
-    background: white !important; /* Sfondo dell'header BIANCO */
-    border-bottom: 1px solid #eaeaea !important; /* Sottile linea grigia di separazione */
+/* --- HEADER PERSONALIZZATO --- */
+header.bg-black {
+    background: white !important;
+    border-bottom: 1px solid #e5e5e5;
 }
 
-/* Logo rotondo nell'header */
-header nav a img {
-    border-radius: 50% !important;
-    border: 2px solid #eee !important;
-    max-height: 55px !important;
-    width: 55px !important;
-    object-fit: cover;
+/* Nascondiamo il titolo di testo originale nell'header */
+header .f3.fw2.hover-white {
+    display: none;
 }
 
-/* Titolo grande dell'header (adesso sarà invisibile su sfondo bianco) */
-header .tc-l h1.f1 {
-    display: none !important; /* Lo nascondiamo completamente! */
+/* Inseriamo il nostro logo al suo posto */
+header .flex-l.justify-between.items-center.center::before {
+    content: '';
+    display: block;
+    background-image: url('/agorai-blog/images/logo_sito.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 180px;  /* Larghezza del logo */
+    height: 55px; /* Altezza del logo */
 }
 
-/* --- CORPO E ARTICOLI --- */
-main {
-    padding-top: 2rem; /* Aggiungiamo un po' di spazio sopra "Ultimi Articoli" */
-}
-
-/* Titoli degli articoli */
-main a.f3.link {
-    color: #36454F !important; /* Grigio scuro per i titoli */
-    transition: color 0.2s ease-in-out;
-}
-main a.f3.link:hover {
-    color: #8A2BE2 !important; /* Viola al passaggio del mouse */
-}
-
-/* Pulsante "Leggi di più" */
-a.f6.br-pill.ba.ph3 {
-    border-color: #8A2BE2; /* Bordo viola */
-    color: #8A2BE2;        /* Testo viola */
-    font-weight: bold;
-    transition: all 0.2s ease-in-out;
-}
-a.f6.br-pill.ba.ph3:hover {
-    background-color: #8A2BE2;
-    color: white;
-}
-
-/* --- FOOTER --- */
-footer.bg-black {
-    background-color: #f7f7f7 !important; /* Stesso colore dello sfondo principale */
-    border-top: 1px solid #eaeaea;
-}
-footer a, footer div {
-    color: #555 !important;
-}
-footer a:hover {
-    color: #00BFFF !important; /* Ciano per i link nel footer */
-}
-
-/* --- NUOVI STILI PER HEADER E GRIGLIA --- */
-
-/* Stile per il logo nell'header (più piccolo) */
-.logo-header {
-    border-radius: 50%;
-    border: 2px solid #eee;
-    height: 45px !important; /* Riduciamo l'altezza */
-    width: 45px !important;
-    object-fit: cover;
-    margin-right: 15px; /* Aggiunge spazio tra logo e titolo */
-}
-
-/* Stile per il titolo a fianco del logo */
-.site-title-header {
-    color: #2c3e50 !important;
-    font-weight: 700;
-    font-size: 1.5rem;
-}
-
-/* Rimuoviamo il titolo gigante nel banner che non ci serve più */
-body > header > div.tc-l {
+/* Nascondiamo il titolo gigante nell'header */
+header .tc-l h1 {
     display: none !important;
 }
 
-/* --- GRIGLIA PER GLI ARTICOLI --- */
+/* --- TRASFORMAZIONE DELLA LISTA IN GRIGLIA DI CARD --- */
 
-/* Contenitore della griglia */
-.post-grid {
+/* Selezioniamo la lista di post originale del tema */
+main .list.pl0 {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Colonne flessibili */
-    gap: 2rem; /* Spazio tra le card */
-    list-style: none;
-    padding: 0;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px; /* Spazio tra le card */
 }
 
-/* Singola card dell'articolo */
-.post-card {
+/* Ogni elemento della lista diventa una card */
+main .list.pl0 li.mb4 {
     background: white;
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    overflow: hidden; /* Nasconde le parti dell'immagine che escono */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 20px;
+    margin-bottom: 0 !important; /* Rimuoviamo il margine originale */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.post-card:hover {
+main .list.pl0 li.mb4:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* Contenuto testuale della card */
-.post-card-content {
-    padding: 1.5rem;
-    flex-grow: 1; /* Fa in modo che il contenuto occupi lo spazio rimanente */
-    display: flex;
-    flex-direction: column;
-}
-
-/* Titolo nella card */
-.post-card-content .f3 {
-    color: #36454F !important;
-    font-size: 1.25rem;
+/* Titolo dell'articolo nella card */
+main .list.pl0 .f3 {
+    font-size: 1.15rem;
     line-height: 1.4;
-    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c3e50;
 }
 
-/* Riassunto nella card */
-.post-card-content .mt2 {
-    flex-grow: 1; /* Spinge la data e il pulsante in fondo */
+/* Riassunto del post */
+main .list.pl0 .mt2 {
+    margin-top: 10px;
     color: #555;
+    flex-grow: 1; /* Spinge il footer in fondo */
 }
 
-/* Data e pulsante nella card */
-.post-card-footer {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Footer della card (data e pulsante) */
+main .list.pl0 time.gray {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+main .list.pl0 a.f6 {
+    display: none; /* Nascondiamo il vecchio link "Leggi di più" */
 }
