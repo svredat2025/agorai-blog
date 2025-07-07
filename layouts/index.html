@@ -1,13 +1,32 @@
+{{/* layouts/index.html (Versione FINALE e Corretta) */}}
+
+{{/* Diciamo a Hugo di usare il nostro scheletro 'baseof.html' */}}
 {{ define "main" }}
+
+  <div class="content-container">
     <h1 class="page-title">Ultimi Articoli</h1>
+
     <div class="post-list">
-    {{ range where .Site.RegularPages "Type" "posts" }}
+      {{/* Cicliamo su tutte le pagine che sono di tipo "posts" */}}
+      {{ range where .Site.RegularPages "Type" "posts" }}
         <article class="post-summary">
-            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            <time>{{ .Date.Format "02 January 2006, 15:04" }}</time>
-            <p>{{ .Summary }}</p>
-            <a href="{{ .RelPermalink }}" class="read-more">Leggi di più →</a>
+
+          {{/* Titolo dell'articolo che linka al post completo usando .Permalink */}}
+          <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+
+          {{/* Data e ora di pubblicazione */}}
+          <time>{{ .Date.Format "02 January 2006, 15:04" }}</time>
+
+          {{/* Riassunto del post */}}
+          <p>{{ .Summary }}</p>
+          
+          {{/* Pulsante "Leggi di più" che linka al post completo usando .Permalink */}}
+          <a href="{{ .Permalink }}" class="read-more">Leggi di più →</a>
+
         </article>
-    {{ end }}
+      {{ end }}
     </div>
+    
+  </div>
+
 {{ end }}

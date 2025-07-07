@@ -1,6 +1,7 @@
 <header class="site-header">
-  <a href="{{ .Site.Home.RelPermalink }}" class="header-link">
-    <img src="{{ .Site.Params.logo | relURL }}" class="logo" alt="Logo">
+  <!-- Usiamo percorsi assoluti per massima sicurezza -->
+  <a href="/agorai-blog/" class="header-link">
+    <img src="/agorai-blog/images/logo_sito.jpg" class="logo" alt="Logo">
     <span class="site-title">{{ .Site.Title }}</span>
   </a>
 </header>
