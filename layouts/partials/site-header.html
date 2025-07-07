@@ -6,13 +6,15 @@
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
 {{ hugo.Generator }}
 
-{{/* --- FOGLI DI STILE --- */}}
-{{/* Carichiamo prima il CSS del tema Ananke */}}
-{{ $ananke_css := resources.Get "ananke/css/main.min.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $ananke_css.RelPermalink }}">
+{{/* --- FOGLI DI STILE (versione semplificata e robusta) --- */}}
+
+{{/* Carichiamo il CSS del tema Ananke in modo diretto */}}
+<link rel="stylesheet" href="{{ "/themes/ananke/css/main.min.css" | relURL }}">
 
 {{/* E SUBITO DOPO CARICIAMO IL NOSTRO CSS PERSONALIZZATO */}}
 <link rel="stylesheet" href="{{ "/css/custom-v2.css" | relURL }}">
+
+{{/* --- FINE FOGLI DI STILE --- */}}
 
 {{ with .OutputFormats.Get "RSS" }}
   <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
