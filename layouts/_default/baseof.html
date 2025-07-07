@@ -6,18 +6,17 @@
     <title>{{ .Title }} | {{ .Site.Title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!-- Caricamento del CSS del tema -->
-    {{ $style := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <!-- Caricamento del CSS del tema in modo DIRETTO -->
+    <!-- Questo percorso punta al file CSS già processato dentro il tema Ananke -->
+    <link rel="stylesheet" href="{{ "/ananke/css/main.min.css" | relURL }}">
     
-    <!-- **** LA NOSTRA MODIFICA FONDAMENTALE **** -->
-    <!-- Inseriamo a forza il nostro CSS custom dopo quello del tema -->
+    <!-- Caricamento del nostro CSS custom, che ora sovrascriverà quello del tema -->
     <link rel="stylesheet" href="{{ "/css/custom-v2.css" | relURL }}">
-    <!-- **************************************** -->
 
   </head>
   <body class="ma0 avenir bg-near-white">
     
+    <!-- Includiamo i pezzi dell'header e del footer -->
     {{ partial "site-header.html" . }}
     
     <main class="pb7" role="main">
