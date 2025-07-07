@@ -64,3 +64,84 @@ footer a, footer div {
 footer a:hover {
     color: #00BFFF !important; /* Ciano per i link nel footer */
 }
+
+/* --- NUOVI STILI PER HEADER E GRIGLIA --- */
+
+/* Stile per il logo nell'header (più piccolo) */
+.logo-header {
+    border-radius: 50%;
+    border: 2px solid #eee;
+    height: 45px !important; /* Riduciamo l'altezza */
+    width: 45px !important;
+    object-fit: cover;
+    margin-right: 15px; /* Aggiunge spazio tra logo e titolo */
+}
+
+/* Stile per il titolo a fianco del logo */
+.site-title-header {
+    color: #2c3e50 !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Rimuoviamo il titolo gigante nel banner che non ci serve più */
+body > header > div.tc-l {
+    display: none !important;
+}
+
+/* --- GRIGLIA PER GLI ARTICOLI --- */
+
+/* Contenitore della griglia */
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Colonne flessibili */
+    gap: 2rem; /* Spazio tra le card */
+    list-style: none;
+    padding: 0;
+}
+
+/* Singola card dell'articolo */
+.post-card {
+    background: white;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    overflow: hidden; /* Nasconde le parti dell'immagine che escono */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* Contenuto testuale della card */
+.post-card-content {
+    padding: 1.5rem;
+    flex-grow: 1; /* Fa in modo che il contenuto occupi lo spazio rimanente */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Titolo nella card */
+.post-card-content .f3 {
+    color: #36454F !important;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+/* Riassunto nella card */
+.post-card-content .mt2 {
+    flex-grow: 1; /* Spinge la data e il pulsante in fondo */
+    color: #555;
+}
+
+/* Data e pulsante nella card */
+.post-card-footer {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
