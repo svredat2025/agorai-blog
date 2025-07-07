@@ -1,13 +1,55 @@
-/* static/css/custom-v2.css (Versione Finale Definitiva) */
-body { background-color: #f4f8fa !important; font-family: 'Segoe UI', Roboto, sans-serif; }
-header.bg-black { background: white !important; border-bottom: 1px solid #e5e5e5; }
-header .f3.fw2 { display: none; } /* Nasconde il titolo di testo */
-header .flex-l.justify-between.items-center.center::before { content: ''; display: block; background-image: url('/agorai-blog/images/logo_sito.jpg'); background-size: contain; background-repeat: no-repeat; background-position: left center; width: 180px; height: 55px; }
-header .tc-l h1 { display: none !important; }
-main .list.pl0 { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; }
-main .list.pl0 li.mb4 { background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); padding: 20px; margin-bottom: 0 !important; transition: all 0.2s ease-out; display: flex; flex-direction: column; }
-main .list.pl0 li.mb4:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
-main .list.pl0 .f3 { font-size: 1.15rem; line-height: 1.4; font-weight: 600; color: #2c3e50; }
-main .list.pl0 .mt2 { margin-top: 10px; color: #555; flex-grow: 1; }
-main .list.pl0 time.gray { font-size: 0.8rem; color: #888; }
-main .list.pl0 a.f6 { display: block; margin-top: 15px; text-align: right; font-weight: bold; color: #8A2BE2; text-decoration: none; } /* Stile per il link "read more" */
+/* static/css/custom-v2.css (Versione Finale Stabile) */
+
+/* --- IMPOSTAZIONI GLOBALI --- */
+body {
+    background-color: #f4f8fa !important;
+}
+
+/* --- HEADER PERSONALIZZATO --- */
+header.bg-black {
+    background: white !important;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.logo-header {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%; /* Logo tondo */
+    margin-right: 15px; /* Spazio a destra del logo */
+}
+
+.site-title-header {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2c3e50; /* Colore scuro per il titolo */
+}
+
+/* Nascondiamo il titolo gigante di default del tema */
+header div.tc-l {
+    display: none;
+}
+
+/* --- GRIGLIA DI POST A CARD --- */
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+}
+
+.post-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 25px;
+    margin-bottom: 0 !important;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    display: flex;
+    flex-direction: column;
+}
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px A2BE2;
+    font-weight: bold;
+}

@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="ph3-ns-l">
+    <h2 class="f3 b">Ultimi Articoli</h2>
+    <ul class="post-grid">
+        {{ range where .Site.RegularPages "Section" "posts" }}
+            <li class="post-card">
+                <div class="post-card-content">
+                    <a href="{{ .RelPermalink }}" class="db f3 mb1 link">
+                        {{ .Title }}
+                    </a>
+                    <div class="mt2">
+                        {{ .Summary }}
+                    </div>
+                    <div class="post-card-footer">
+                        <time class="f6 tracked gray">{{ .Date.Format "02 Jan 2006, 15:04" }}</time>
+                        <a href="{{ .RelPermalink }}" class="f6 link dim br-pill ba ph3 pv2 dib">Leggi</a>
+                    </div>
+                </div>
+            </li>
+        {{ end }}
+    </ul>
+</div>
+{{ end }}
