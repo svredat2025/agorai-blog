@@ -1,86 +1,13 @@
-/* static/css/custom-v2.css (Versione Finale) */
-
-/* --- IMPOSTAZIONI GLOBALI --- */
-body {
-    background-color: #f4f8fa !important; /* Un azzurrino/grigio molto chiaro */
-    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-}
-
-/* --- HEADER PERSONALIZZATO --- */
-header.bg-black {
-    background: white !important;
-    border-bottom: 1px solid #e5e5e5;
-}
-
-/* Nascondiamo il titolo di testo originale nell'header */
-header .f3.fw2.hover-white {
-    display: none;
-}
-
-/* Inseriamo il nostro logo al suo posto */
-header .flex-l.justify-between.items-center.center::before {
-    content: '';
-    display: block;
-    background-image: url('/agorai-blog/images/logo_sito.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 180px;  /* Larghezza del logo */
-    height: 55px; /* Altezza del logo */
-}
-
-/* Nascondiamo il titolo gigante nell'header */
-header .tc-l h1 {
-    display: none !important;
-}
-
-/* --- TRASFORMAZIONE DELLA LISTA IN GRIGLIA DI CARD --- */
-
-/* Selezioniamo la lista di post originale del tema */
-main .list.pl0 {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 25px; /* Spazio tra le card */
-}
-
-/* Ogni elemento della lista diventa una card */
-main .list.pl0 li.mb4 {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    padding: 20px;
-    margin-bottom: 0 !important; /* Rimuoviamo il margine originale */
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-    display: flex;
-    flex-direction: column;
-}
-
-main .list.pl0 li.mb4:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-/* Titolo dell'articolo nella card */
-main .list.pl0 .f3 {
-    font-size: 1.15rem;
-    line-height: 1.4;
-    font-weight: 600;
-    color: #2c3e50;
-}
-
-/* Riassunto del post */
-main .list.pl0 .mt2 {
-    margin-top: 10px;
-    color: #555;
-    flex-grow: 1; /* Spinge il footer in fondo */
-}
-
-/* Footer della card (data e pulsante) */
-main .list.pl0 time.gray {
-    font-size: 0.8rem;
-    color: #888;
-}
-
-main .list.pl0 a.f6 {
-    display: none; /* Nascondiamo il vecchio link "Leggi di più" */
-}
+/* static/css/custom-v2.css (Versione Finale Definitiva) */
+body { background-color: #f4f8fa !important; font-family: 'Segoe UI', Roboto, sans-serif; }
+header.bg-black { background: white !important; border-bottom: 1px solid #e5e5e5; }
+header .f3.fw2 { display: none; } /* Nasconde il titolo di testo */
+header .flex-l.justify-between.items-center.center::before { content: ''; display: block; background-image: url('/agorai-blog/images/logo_sito.jpg'); background-size: contain; background-repeat: no-repeat; background-position: left center; width: 180px; height: 55px; }
+header .tc-l h1 { display: none !important; }
+main .list.pl0 { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; }
+main .list.pl0 li.mb4 { background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); padding: 20px; margin-bottom: 0 !important; transition: all 0.2s ease-out; display: flex; flex-direction: column; }
+main .list.pl0 li.mb4:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+main .list.pl0 .f3 { font-size: 1.15rem; line-height: 1.4; font-weight: 600; color: #2c3e50; }
+main .list.pl0 .mt2 { margin-top: 10px; color: #555; flex-grow: 1; }
+main .list.pl0 time.gray { font-size: 0.8rem; color: #888; }
+main .list.pl0 a.f6 { display: block; margin-top: 15px; text-align: right; font-weight: bold; color: #8A2BE2; text-decoration: none; } /* Stile per il link "read more" */
