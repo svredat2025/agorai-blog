@@ -11,23 +11,48 @@ body {
     margin: 2rem auto;
     padding: 0 1rem;
 }
+
+/* static/css/style.css */
+
+/* ... (la sezione 'IMPOSTAZIONI GLOBALI' rimane uguale) ... */
+
+/* --- HEADER CON LOGO E TITOLO AFFIANCATI E CENTRATI --- */
 .site-header {
     position: fixed; top: 0; left: 0; width: 100%;
     background: white;
-    padding: 15px 30px;
+    padding: 10px 0; /* Rimuoviamo il padding laterale per centrare meglio */
     border-bottom: 1px solid #e0e0e0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    z-index: 100;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* <<< MODIFICA: Centra il contenuto orizzontalmente */
+    align-items: center;
 }
+
 .header-link {
-    display: flex; align-items: center; text-decoration: none;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
+
+/* 1. Logo più grande */
 .logo {
-    height: 50px; width: 50px; border-radius: 50%; margin-right: 15px;
+    height: 65px !important; /* <<< MODIFICA: Aumentato da 50px */
+    width: 65px !important;  /* <<< MODIFICA: Aumentato da 50px */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px; /* Aumentiamo un po' lo spazio */
 }
+
+/* 2. Titolo a tema con il logo */
 .site-title {
-    font-size: 1.2rem; font-weight: 600; color: #2c3e50;
+    font-size: 1.8rem; /* Leggermente più grande per bilanciare il logo */
+    font-weight: 600;
+    color: #2c3e50;
 }
+
+/* ... (tutto il resto del CSS per gli articoli e il footer rimane uguale) ... */
+
 .post-list .post-summary {
     background: white; padding: 2rem;
     border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
