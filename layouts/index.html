@@ -1,11 +1,5 @@
 {{ define "main" }}
-<div class="ph3-ns-l">
-    
-    <!-- Sezione del Titolo Principale (Hero) -->
-    <div class="w-100 tc pv4 pv5-ns">
-        <h1 class="f1 f-headline-l fw1 i white-60">{{ .Site.Title }}</h1>
-    </div>
-    
+<div class="ph3-ns-l">    
     <!-- Intestazione per la lista dei post -->
     <h2 class="f3 b">Ultimi Articoli</h2>
 
@@ -20,7 +14,7 @@
                     {{ .Title }}
                 </a>
                 <!-- Data di pubblicazione -->
-                <time class="f6 ttu tracked gray">{{ .Date.Format "02 January 2006" }}</time>
+                <time class="f6 ttu tracked gray">{{ .Date.Format "02 January 2006, 15:04" }}</time>
                 <!-- Riassunto del post (Hugo lo genera automaticamente) -->
                 <div class="mt2">
                     {{ .Summary }}

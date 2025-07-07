@@ -73,3 +73,25 @@ nav .f3 img.w4 {
     max-height: 50px; /* Imposta un'altezza massima per evitare che sia troppo grande */
     width: auto;      /* Mantiene le proporzioni */
 }
+
+/* 1. Rende il logo rotondo e lo centra verticalmente */
+nav img {
+    border-radius: 50%; /* Questo crea il cerchio */
+    border: 2px solid #ddd; /* Aggiunge un sottile bordo grigio */
+    max-height: 60px;   /* Leggermente più grande */
+    width: auto;
+    vertical-align: middle; /* Lo allinea meglio con il testo, se ci fosse */
+}
+
+/* 2. Modifica lo sfondo dell'header con un gradiente scuro */
+body > header > .bg-black {
+    /* Sostituisce il bianco che avevamo messo prima */
+    background: linear-gradient(to right, #2c3e50, #4ca1af); /* Da grigio-blu a ciano */
+    border-bottom: none; /* Rimuoviamo il bordo che non serve più */
+}
+
+/* Cambia il colore del titolo grande nell'header per renderlo leggibile */
+.tc-l .f1.f-subheadline-l {
+    color: white !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Aggiunge un'ombra per leggibilità */
+}
