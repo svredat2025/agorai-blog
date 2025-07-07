@@ -1,7 +1,7 @@
 baseURL = 'https://svredat2025.github.io/agorai-blog/'
 languageCode = 'it-it'
 title = 'AgorAI | Notiziario Intelligente'
-theme = 'ananke'
+#theme = 'ananke'
 
 [pagination]
   pageSize = 6 # Mostriamo 6 post per pagina
