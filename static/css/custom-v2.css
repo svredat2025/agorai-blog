@@ -1,111 +1,44 @@
-/* static/css/custom-v2.css (Versione Design Finale) */
-
-/* --- IMPOSTAZIONI GLOBALI --- */
+/* Rimuove il padding del corpo per far attaccare l'header in alto */
 body {
-    background-color: #f4f8fa !important; /* Un azzurrino/grigio molto pallido */
-    font-family: 'Segoe UI', 'Roboto', -apple-system, sans-serif;
-    color: #333;
+    padding-top: 80px; /* Spazio per l'header fisso */
 }
 
-/* --- HEADER CON LOGO E TITOLO AFFIANCATI --- */
-main.pb7 {
-    padding-top: 90px; /* Spazio per l'header fisso */
-}
-
-.custom-header {
-    position: fixed; /* Lo fissiamo in cima alla pagina */
+/* La nostra barra di navigazione personalizzata */
+.custom-nav {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px 5%;
     background-color: white;
     border-bottom: 1px solid #e0e0e0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    z-index: 1000;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.custom-header .header-link {
+.custom-nav .nav-link {
     display: flex;
     align-items: center;
     text-decoration: none;
 }
 
-/* 1. Logo più piccolo e tondo */
-.custom-header .logo {
-    height: 50px !important; /* Più piccolo */
-    width: 50px !important;
+.custom-nav .nav-logo {
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px; /* Spazio tra logo e titolo */
+    margin-right: 15px;
 }
 
-/* 2. Titolo a tema con il logo */
-.custom-header .site-title {
+.custom-nav .nav-title {
     font-size: 1.5rem;
     font-weight: 600;
-    /* Usiamo un gradiente che riprende i colori del logo! */
-    background: linear-gradient(45deg, #8A2BE2, #00BFFF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
+    color: #2c3e50;
 }
 
-/* --- 3. LISTA ARTICOLI CENTRATA E MODERNA --- */
+/* Contenitore principale degli articoli */
 main > .ph3-ns-l {
-    max-width: 750px; /* Larghezza ideale per la lettura */
-    margin: 0 auto;   /* Centra il contenitore */
-    padding: 2rem 1rem;
-}
-
-/* Nascondiamo il titolo "Ultimi Articoli", non serve */
-main > .ph3-ns-l > h2.f3.b {
-    display: none;
-}
-
-ul.list > li.mb4 {
-    background-color: white;
-    border: none;
-    border-radius: 12px; /* Angoli più arrotondati */
-    padding: 2.5rem;
-    margin-bottom: 2rem !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Ombra più pronunciata */
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-ul.list > li.mb4:hover {
-    transform: translateY(-5px); /* Effetto "sollevamento" al passaggio del mouse */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-/* Titolo dell'articolo nella card */
-li a.db.f3.mb1 {
-    color: #2c3e50 !important;
-    font-weight: bold;
-}
-
-/* Data e ora */
-li time.f6.ttu {
-    color: #95a5a6; /* Grigio più morbido */
-    font-weight: 500;
-}
-
-/* Riassunto del post */
-.mt2.lh-copy {
-    color: #555;
-    line-height: 1.7; /* Aumenta l'interlinea per leggibilità */
-}
-
-/* Pulsante "Leggi di più" */
-a.f6.br-pill.ba.ph3.pv2 {
-    border-color: #8A2BE2;
-    color: #8A2BE2;
-    font-weight: bold;
-    transition: all 0.2s ease-in-out;
-}
-a.f6.br-pill.ba.ph3.pv2:hover {
-    background-color: #8A2BE2;
-    color: white;
+    max-width: 800px;
+    margin: 0 auto;
 }

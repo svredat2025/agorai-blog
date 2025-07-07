@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+    {{ hugo.Generator }}
+
+    {{/* --- FOGLI DI STILE --- */}}
+    {{/* Carichiamo il CSS del tema Ananke in modo diretto e robusto */}}
+    <link rel="stylesheet" href="{{ "/themes/ananke/css/main.min.css" | relURL }}">
+    
+    {{/* E SUBITO DOPO CARICIAMO IL NOSTRO CSS PERSONALIZZATO */}}
+    <link rel="stylesheet" href="{{ "/css/custom-v2.css" | relURL }}">
+    
+    {{ with .OutputFormats.Get "RSS" }}
+      <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+    {{ end }}
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+    
+    {{/* Non includiamo più l'header di default, lo gestiremo nei singoli template */}}
+
+    <main class="pb7" role="main">
+      {{/* Qui dentro Hugo inserirà il contenuto specifico di ogni pagina (es. index.html, single.html) */}}
+      {{ block "main" . }}{{ end }}
+    </main>
+    
+    {{ partial "site-footer.html" . }}
+
+  </body>
+</html>

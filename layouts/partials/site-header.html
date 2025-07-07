@@ -1,22 +1,8 @@
-{{/* layouts/partials/site-header.html */}}
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>{{ .Title }} | {{ .Site.Title }}</title>
-<meta name="viewport" content="width=device-width,minimum-scale=1">
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
-{{ hugo.Generator }}
-
-{{/* --- FOGLI DI STILE (versione semplificata e robusta) --- */}}
-
-{{/* Carichiamo il CSS del tema Ananke in modo diretto */}}
-<link rel="stylesheet" href="{{ "/themes/ananke/css/main.min.css" | relURL }}">
-
-{{/* E SUBITO DOPO CARICIAMO IL NOSTRO CSS PERSONALIZZATO */}}
-<link rel="stylesheet" href="{{ "/css/custom-v2.css" | relURL }}">
-
-{{/* --- FINE FOGLI DI STILE --- */}}
-
-{{ with .OutputFormats.Get "RSS" }}
-  <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
-  <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
-{{ end }}
+<header>
+  <div class="custom-header-container">
+    <a href="{{ .Site.Home.RelPermalink }}" class="header-link">
+      <img src="{{ .Site.Params.logo | relURL }}" class="logo" alt="AgorAI Logo">
+      <span class="site-title">{{ .Site.Title }}</span>
+    </a>
+  </div>
+</header>

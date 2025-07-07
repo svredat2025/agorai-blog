@@ -1,0 +1,16 @@
+{{/* layouts/partials/site-navigation.html (Versione per Header Custom) */}}
+
+<nav class="custom-nav">
+  <a href="{{ .Site.Home.RelPermalink }}" class="nav-link">
+    
+    {{/* Controlla se un logo è definito in config.toml */}}
+    {{ with .Site.Params.logo }}
+      <img src="{{ . | relURL }}" class="nav-logo" alt="AgorAI Logo">
+    {{ end }}
+    
+    <span class="nav-title">{{ .Site.Title }}</span>
+
+  </a>
+  
+  {{/* Qui in futuro potremmo aggiungere altri link di navigazione */}}
+</nav>
