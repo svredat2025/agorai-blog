@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="it-it">
-<head>
+  <head>
     <meta charset="utf-8">
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+    {{ hugo.Generator }}
+    
+    <!-- Carica il nostro unico foglio di stile -->
     <link rel="stylesheet" href="/agorai-blog/css/style.css">
-</head>
-<body>
+
+  </head>
+  <body>
+
+    {{/* Includiamo il nostro header personalizzato */}}
     {{ partial "header.html" . }}
+
     <main class="container">
-        {{ block "main" . }}{{ end }}
+      {{/* Hugo inserirà qui il contenuto specifico della pagina */}}
+      {{ block "main" . }}{{ end }}
     </main>
+
+    {{/* Includiamo il nostro footer personalizzato */}}
     {{ partial "footer.html" . }}
-</body>
+
+  </body>
 </html>

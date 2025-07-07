@@ -1,7 +1,11 @@
 <header class="site-header">
-  <!-- Usiamo percorsi assoluti per massima sicurezza -->
   <a href="/agorai-blog/" class="header-link">
-    <img src="/agorai-blog/images/logo_sito.jpg" class="logo" alt="Logo">
+
+    {{ with .Site.Params.logo }}
+      <img src="{{ . | relURL }}" class="logo" alt="AgorAI Logo">
+    {{ end }}
+    
     <span class="site-title">{{ .Site.Title }}</span>
+
   </a>
 </header>
