@@ -1,115 +1,63 @@
-/* static/css/custom-v2.css (Versione Definitiva e Stabile) */
+/* static/css/custom-v2.css (Versione Finale) */
 
-/* ------------------------------ */
-/*      IMPOSTAZIONI GLOBALI      */
-/* ------------------------------ */
+/* --- IMPOSTAZIONI GLOBALI --- */
 body {
-    background-color: #f4f8fa !important; /* Sfondo grigio-azzurrino chiaro */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #ffffff !important; /* Sfondo bianco puro */
+    font-family: 'Segoe UI', 'Roboto', -apple-system, sans-serif;
 }
 
-/* ------------------------------ */
-/*           HEADER               */
-/* ------------------------------ */
-
-/* Sfondo bianco per l'header */
-header.bg-black {
-    background: white !important;
-    border-bottom: 1px solid #e5e5e5;
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-}
-
-/* Nasconde il titolo di testo originale (AgorAI | Notiziario Intelligente) */
-header .f3.fw2.hover-white.no-underline.white-90 {
-    font-size: 0; /* Lo rende invisibile senza rimuoverlo, più stabile */
-}
-
-/* Inserisce il logo al suo posto */
-header .f3.fw2.hover-white.no-underline.white-90::before {
-    content: '';
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    background-image: url('../images/logo_sito.jpg'); /* Percorso relativo al CSS */
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%; /* Logo tondo */
-    border: 2px solid #ddd;
-    vertical-align: middle;
-    margin-right: 15px;
-}
-
-/* Inserisce il titolo del sito a fianco del logo */
-header .f3.fw2.hover-white.no-underline.white-90::after {
-    content: 'AgorAI | Notiziario Intelligente'; /* Scriviamo il titolo qui */
-    font-size: 1.7rem; /* Dimensione del font originale */
-    font-weight: 600;
-    color: #2c3e50;
-    vertical-align: middle;
-}
-
-/* Nascondiamo il titolo gigante nel banner centrale */
-header .tc-l.pv4.pv5-ns {
+/* --- 1. HEADER E LOGO --- */
+/* Rimuoviamo completamente l'header nero di default */
+body > header {
     display: none !important;
 }
 
-/* ------------------------------ */
-/*      GRIGLIA ARTICOLI          */
-/* ------------------------------ */
-
-/* Trasforma la lista di default in una griglia */
-main .list.pl0 {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 30px;
-    padding-top: 2rem;
+/* Creiamo una nuova barra di navigazione in cima al contenuto principale */
+main.pb7 {
+    padding-top: 100px; /* Spazio per la nostra nuova barra di navigazione */
+    position: relative;
 }
 
-/* Stile per ogni card */
-main .list.pl0 li.mb4 {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
-    margin: 0 !important;
-    padding: 25px;
+/* Questo è il nostro nuovo header personalizzato */
+.custom-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 5%;
     display: flex;
-    flex-direction: column;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-main .list.pl0 li.mb4:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid #eee;
 }
 
-/* Titolo dell'articolo nella card */
-main .list.pl0 a.f3 {
-    font-size: 1.2rem;
-    line-height: 1.4;
-    font-weight: 700;
+.custom-header .logo-container img {
+    border-radius: 50% !important;
+    height: 60px !important;
+    width: 60px !important;
+    object-fit: cover;
+}
+
+.custom-header .site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
     color: #2c3e50;
     text-decoration: none;
 }
-main .list.pl0 a.f3:hover {
-    color: #8A2BE2; /* Viola */
+
+/* --- 2. LISTA ARTICOLI CENTRATA --- */
+/* Centriamo il contenitore degli articoli */
+main > .ph3-ns-l {
+    max-width: 800px; /* Larghezza massima del contenuto */
+    margin: 0 auto;   /* Trucco per centrare */
 }
 
-/* Riassunto del post */
-main .list.pl0 .lh-copy {
-    margin-top: 15px;
-    color: #555;
-    flex-grow: 1; /* Spinge il footer della card in fondo */
-}
-
-/* Data e link "Leggi di più" */
-main .list.pl0 .f6.db {
-    margin-top: 20px;
-    color: #999;
-    font-size: 0.8rem;
-}
-main .list.pl0 .f6.db a {
-    color: #8A2BE2; /* Viola */
-    font-weight: bold;
-    text-decoration: none;
-    float: right; /* Allinea il link a destra */
+/* Stile per ogni "card" di articolo */
+ul.list > li.mb4 {
+    border: 1px solid #e0e0e0;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }

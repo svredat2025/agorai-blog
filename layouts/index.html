@@ -1,23 +1,28 @@
 {{ define "main" }}
-<div class="ph3-ns-l">
-    <h2 class="f3 b">Ultimi Articoli</h2>
-    <ul class="post-grid">
-        {{ range where .Site.RegularPages "Section" "posts" }}
-            <li class="post-card">
-                <div class="post-card-content">
-                    <a href="{{ .RelPermalink }}" class="db f3 mb1 link">
-                        {{ .Title }}
-                    </a>
-                    <div class="mt2">
-                        {{ .Summary }}
-                    </div>
-                    <div class="post-card-footer">
-                        <time class="f6 tracked gray">{{ .Date.Format "02 Jan 2006, 15:04" }}</time>
-                        <a href="{{ .RelPermalink }}" class="f6 link dim br-pill ba ph3 pv2 dib">Leggi</a>
-                    </div>
-                </div>
-            </li>
-        {{ end }}
-    </ul>
-</div>
+  <!-- Il nostro nuovo header personalizzato -->
+  <div class="custom-header">
+    <div class="logo-container">
+      <a href="/agorai-blog/"><img src="/agorai-blog/images/logo_sito.jpg" alt="AgorAI Logo"></a>
+    </div>
+    <a href="/agorai-blog/" class="site-title">AgorAI | Notiziario Intelligente</a>
+  </div>
+
+  <!-- Il contenuto della pagina -->
+  <div class="ph3-ns-l">
+      <h2 class="f3 b">Ultimi Articoli</h2>
+      <ul class="list pl0">
+          {{ range where .Site.RegularPages "Section" "posts" }}
+              <li class="mb4">
+                  <a href="{{ .RelPermalink }}" class="db f3 mb1 link dim">
+                      {{ .Title }}
+                  </a>
+                  <time class="f6 ttu tracked gray">{{ .Date.Format "02 January 2006, 15:04" }}</time>
+                  <div class="mt2 lh-copy">
+                      {{ .Summary }}
+                  </div>
+                  <a href="{{ .RelPermalink }}" class="f6 link dim br-pill ba ph3 pv2 mb2 dib mt3">Leggi di più →</a>
+              </li>
+          {{ end }}
+      </ul>
+  </div>
 {{ end }}
