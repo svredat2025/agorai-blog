@@ -1,52 +1,50 @@
-/* static/css/custom.css (Versione con selettori specifici) */
+/* static/css/custom.css (Versione con Header Bianco e Stile Minimale) */
 
-/* --- FONT E COLORI DI BASE --- */
-body.ma0.avenir.bg-near-white {
-    background-color: #fafafa !important; /* Un grigio chiarissimo per lo sfondo */
-    color: #2c3e50 !important;      /* Un grigio-blu scuro per il testo, più moderno */
+/* --- IMPOSTAZIONI GLOBALI --- */
+body {
+    background-color: #f7f7f7 !important; /* Sfondo principale grigio molto chiaro */
+    color: #2c3e50 !important;      /* Testo principale grigio-blu scuro */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* --- HEADER --- */
-/* Selezioniamo l'header usando la sua struttura */
-body > header > .bg-black {
-    background-color: white !important;
-    border-bottom: 1px solid #eaeaea;
+/* --- HEADER PULITO E BIANCO --- */
+body > header > div.bg-black {
+    background: white !important; /* Sfondo dell'header BIANCO */
+    border-bottom: 1px solid #eaeaea !important; /* Sottile linea grigia di separazione */
 }
 
-/* Titolo del sito cliccabile nell'header */
-header .f3.fw2.hover-white.no-underline {
-    color: #2c3e50 !important;
-}
-header a:hover {
-    color: #00BFFF !important; /* Ciano al passaggio del mouse */
-}
-
-/* Titolo grande nell'header */
-.tc-l .f2.f-subheadline-l {
-    color: #36454F !important;
+/* Logo rotondo nell'header */
+header nav a img {
+    border-radius: 50% !important;
+    border: 2px solid #eee !important;
+    max-height: 55px !important;
+    width: 55px !important;
+    object-fit: cover;
 }
 
-/* --- CORPO PRINCIPALE E ARTICOLI --- */
+/* Titolo grande dell'header (adesso sarà invisibile su sfondo bianco) */
+header .tc-l h1.f1 {
+    display: none !important; /* Lo nascondiamo completamente! */
+}
 
-/* Titoli degli articoli nella lista */
+/* --- CORPO E ARTICOLI --- */
+main {
+    padding-top: 2rem; /* Aggiungiamo un po' di spazio sopra "Ultimi Articoli" */
+}
+
+/* Titoli degli articoli */
 main a.f3.link {
-    color: #36454F !important;
-    transition: color 0.2s ease-in-out; /* Aggiunge una transizione fluida */
+    color: #36454F !important; /* Grigio scuro per i titoli */
+    transition: color 0.2s ease-in-out;
 }
 main a.f3.link:hover {
     color: #8A2BE2 !important; /* Viola al passaggio del mouse */
 }
 
-/* Testo del riassunto (summary) */
-.lh-copy.measure-wide {
-    color: #555;
-}
-
 /* Pulsante "Leggi di più" */
 a.f6.br-pill.ba.ph3 {
-    border-color: #8A2BE2;
-    color: #8A2BE2;
+    border-color: #8A2BE2; /* Bordo viola */
+    color: #8A2BE2;        /* Testo viola */
     font-weight: bold;
     transition: all 0.2s ease-in-out;
 }
@@ -57,41 +55,12 @@ a.f6.br-pill.ba.ph3:hover {
 
 /* --- FOOTER --- */
 footer.bg-black {
-    background-color: white !important;
+    background-color: #f7f7f7 !important; /* Stesso colore dello sfondo principale */
     border-top: 1px solid #eaeaea;
 }
-
-footer a.white-70 {
+footer a, footer div {
     color: #555 !important;
 }
-footer a.white-70:hover {
-    color: #00BFFF !important;
-}
-
-/* Stile per il logo nell'header */
-nav .f3 img.w4 {
-    max-height: 50px; /* Imposta un'altezza massima per evitare che sia troppo grande */
-    width: auto;      /* Mantiene le proporzioni */
-}
-
-/* 1. Rende il logo rotondo e lo centra verticalmente */
-nav img {
-    border-radius: 50%; /* Questo crea il cerchio */
-    border: 2px solid #ddd; /* Aggiunge un sottile bordo grigio */
-    max-height: 60px;   /* Leggermente più grande */
-    width: auto;
-    vertical-align: middle; /* Lo allinea meglio con il testo, se ci fosse */
-}
-
-/* 2. Modifica lo sfondo dell'header con un gradiente scuro */
-body > header > .bg-black {
-    /* Sostituisce il bianco che avevamo messo prima */
-    background: linear-gradient(to right, #2c3e50, #4ca1af); /* Da grigio-blu a ciano */
-    border-bottom: none; /* Rimuoviamo il bordo che non serve più */
-}
-
-/* Cambia il colore del titolo grande nell'header per renderlo leggibile */
-.tc-l .f1.f-subheadline-l {
-    color: white !important;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Aggiunge un'ombra per leggibilità */
+footer a:hover {
+    color: #00BFFF !important; /* Ciano per i link nel footer */
 }
